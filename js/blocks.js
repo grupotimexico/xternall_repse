@@ -265,59 +265,64 @@
     apply(modes.find(b => b.getAttribute('aria-pressed') === 'true') || modes[0]);
   });
 
-  // ---------- Formulario de demo → CRM ----------
-  // ============================ CONFIGURACIÓN CRM ============================
-  // ⚠ La api-key queda VISIBLE en el código de la página publicada. Usar solo una
-  //   clave que únicamente permita CREAR contactos (sin leer, editar ni borrar).
-  // Con apiKey vacía: en local se simula el envío (y se muestra en consola lo que
-  // se mandaría); publicada, el formulario muestra error y no envía nada.
-  const CRM = {
-    endpoint: 'https://erp.grupotimexico.com/ords/crm/api/contactos',
-    apiKey: '',                                   // ← pegar aquí la api-key
-    fijos: {                                      // valores que define el CRM
-      categoria: 'Xternall',
-      servicio: 'Xternall REPSE y Cumplimiento',
-      canal_contacto: 'landing page - Xternall REPSE y Cumplimiento',
-      interesado: null,
-      estatus: null
-    }
+  // ---------- Formulario de demo → Sofía (CRM + aviso por correo) ----------
+  // ============================ CONFIGURACIÓN ================================
+  // La página NO habla con el CRM ni guarda llaves: manda la solicitud al backend
+  // de Sofía, que con las llaves de su secret registra el contacto en el CRM
+  // (/ords/crm/api/contactos) y manda el aviso por correo con la plantilla.
+  // Destinatarios, llave del CRM y modo de pruebas se configuran allá, en
+  // LandingLeads:Sites:xternall_repse (docs/LANDING-LEADS.md de portal-ia-backend-service).
+  // En local se simula (se muestra en consola) salvo que haya endpointLocal.
+  const SOFIA = {
+    // ⚠ PRUEBAS: apunta a QA. Al pasar a producción cambiar a
+    //   'https://sofia-service.gtim.mx/api/public/landing-leads/xternall_repse'
+    endpoint: 'https://sofia-qa-service.gtim.mx/api/public/landing-leads/xternall_repse',
+    endpointLocal: ''                             // p. ej. 'http://localhost:5000/api/public/landing-leads/xternall_repse'
   };
   // ===========================================================================
 
   // Parámetros de campaña del link (?utm_source=…&utm_campaign=…)
   const utm = new URLSearchParams(location.search);
+  const recorta = (v, max) => (v ? String(v).slice(0, max) : null);
+  // Página desde la que llegó (otro sitio); una recarga o un link interno no cuentan
+  const referrer = (() => {
+    try { return document.referrer && new URL(document.referrer).origin !== location.origin ? document.referrer : null; }
+    catch { return null; }
+  })();
 
-  // Arma el registro con la estructura de /ords/crm/api/contactos
-  const toCRM = data => {
-    const full = (data.name || '').trim().replace(/\s+/g, ' ');
-    const [nombre, ...resto] = full.split(' ');
-    const mensaje = ['Solicitud de demo']
-      .concat(data.suppliers ? `Proveedores: ${data.suppliers}` : [])
-      .concat('Aceptó ser contactado sobre una demo')
-      .join(' · ');
-    return {
-      nombre: nombre || null,
-      apellido: resto.join(' ') || null,
-      correo: (data.email || '').trim().toLowerCase() || null,
-      telefono: null,                             // el formulario no lo pide
-      empresa: (data.company || '').trim() || null,
-      categoria: CRM.fijos.categoria,
-      servicio: CRM.fijos.servicio,
-      canal_contacto: CRM.fijos.canal_contacto,
-      fuente: ['xternall-repse-cumplimiento', utm.get('utm_source')].filter(Boolean).join(' / '),
-      campana: utm.get('utm_campaign') || null,
-      mensaje_inicial: mensaje,
-      interesado: CRM.fijos.interesado,
-      necesita_atencion: null,                    // campos internos del CRM
-      por_que: null,
-      respondio_correo: null,
-      responsable: null,
-      estatus: CRM.fijos.estatus,
-      creado: null,                               // los asigna el servidor
-      creado_por: null,
-      actualizado: null,
-      actualizado_por: null
-    };
+  // Lo que recibe Sofía (POST /api/public/landing-leads/{sitio}). Con esto arma el
+  // registro del CRM: fuente = "xternall-repse-cumplimiento / <utm_source>", campana = utm_campaign.
+  const toSofia = data => ({
+    name: (data.name || '').trim(),
+    email: (data.email || '').trim(),
+    company: (data.company || '').trim(),
+    suppliers: data.suppliers || null,
+    consent: data.consent === 'on',
+    website: data.website || '',                  // honeypot
+    utmSource: recorta(utm.get('utm_source'), 200),
+    utmMedium: recorta(utm.get('utm_medium'), 200),
+    utmCampaign: recorta(utm.get('utm_campaign'), 200),
+    utmContent: recorta(utm.get('utm_content'), 200),
+    utmTerm: recorta(utm.get('utm_term'), 200),
+    referrer: recorta(referrer, 1000),
+    pageUrl: recorta(location.href, 1000)
+  });
+
+  // POST JSON; marca err.network si ni siquiera hubo respuesta (sin conexión / CORS)
+  const postJSON = async (url, body) => {
+    let res;
+    try {
+      res = await fetch(url, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(body)
+      });
+    } catch (err) {
+      err.network = true;
+      throw err;
+    }
+    if (!res.ok) throw new Error(`${new URL(url).host} respondió ${res.status}`);
+    return res.json().catch(() => ({}));
   };
 
   // Textos del formulario: data-busy, data-error y data-error-network en el <form>
@@ -340,33 +345,24 @@
       if (!form.reportValidity()) return;
       if (form.website.value) return; // honeypot: bots
 
-      const registro = toCRM(Object.fromEntries(new FormData(form)));
+      const solicitud = toSofia(Object.fromEntries(new FormData(form)));
+      const endpoint = isLocal ? SOFIA.endpointLocal : SOFIA.endpoint;
 
       setBusy(true);
       try {
-        if (CRM.apiKey) {
-          let res;
-          try {
-            res = await fetch(CRM.endpoint, {
-              method: 'POST',
-              headers: { 'Content-Type': 'application/json', 'Accept': 'application/json', 'api-key': CRM.apiKey },
-              body: JSON.stringify(registro)
-            });
-          } catch (err) {
-            err.network = true;                   // sin conexión / CORS
-            throw err;
-          }
-          if (!res.ok) throw new Error(`CRM respondió ${res.status}`);
-          const json = await res.json().catch(() => ({}));
-          const id = json.id ?? json.id_contacto ?? json.contacto_id;
-          const folio = success.querySelector('[data-folio]');
-          if (folio && id != null) { folio.querySelector('b').textContent = id; folio.hidden = false; }
+        let folio = null;
+        if (endpoint) {
+          const json = await postJSON(endpoint, solicitud);
+          folio = json.folio ?? null;
         } else if (isLocal) {
-          console.info('[demo-form] Sin api-key: envío SIMULADO. Esto se mandaría al CRM:', registro);
+          console.info('[demo-form] Envío SIMULADO. Esto se mandaría a Sofía:', solicitud);
           await new Promise(r => setTimeout(r, 600));
         } else {
-          throw new Error('Falta la api-key del CRM');
+          throw new Error('Falta el endpoint de Sofía');
         }
+
+        const folioBox = success.querySelector('[data-folio]');
+        if (folioBox && folio != null) { folioBox.querySelector('b').textContent = folio; folioBox.hidden = false; }
         form.hidden = true;
         success.hidden = false;
         success.focus();
