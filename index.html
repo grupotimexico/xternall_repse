@@ -1,0 +1,636 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#232e61">
+<title>Gestión de Proveedores de Servicios Especializados | Xternall</title>
+<meta name="description" content="REPSE y Cumplimiento - Monitorea y garantiza el cumplimiento de tus prestadores de servicio con: SAT, REPSE, IMSS e INFONAVIT. ¡Agenda una demo!">
+<meta property="og:title" content="Gestión de Proveedores de Servicios Especializados | Xternall">
+<meta property="og:description" content="REPSE y Cumplimiento - Monitorea y garantiza el cumplimiento de tus prestadores de servicio con: SAT, REPSE, IMSS e INFONAVIT. ¡Agenda una demo!">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="es_MX">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="Gestión de Proveedores de Servicios Especializados | Xternall">
+<meta name="twitter:description" content="REPSE y Cumplimiento - Monitorea y garantiza el cumplimiento de tus prestadores de servicio con: SAT, REPSE, IMSS e INFONAVIT. ¡Agenda una demo!">
+<link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Ubuntu:wght@300;400;500;700&family=Work+Sans:wght@400;500;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="css/xternall-ui.css">
+<link rel="stylesheet" href="css/blocks.css">
+<link rel="stylesheet" href="css/landing.css">
+</head>
+<body>
+
+<!-- Íconos (estilo lineal, 24px) -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></symbol>
+    <symbol id="i-check-circle" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-arrow-up-right" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M7 17 17 7M8 7h9v9"/></symbol>
+    <symbol id="i-arrow-down" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v14M6 13l6 6 6-6"/></symbol>
+    <symbol id="i-calendar" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></symbol>
+    <symbol id="i-folder" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 20a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-7.9a2 2 0 0 1-1.69-.9L9.6 3.9A2 2 0 0 0 7.93 3H4a2 2 0 0 0-2 2v13a2 2 0 0 0 2 2Z"/></symbol>
+    <symbol id="i-file" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></symbol>
+    <symbol id="i-file-check" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></symbol>
+    <symbol id="i-search" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></symbol>
+    <symbol id="i-shield" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 13c0 5-3.5 7.5-7.66 8.95a1 1 0 0 1-.67-.01C7.5 20.5 4 18 4 13V6a1 1 0 0 1 1-1c2 0 4.5-1.2 6.24-2.72a1.17 1.17 0 0 1 1.52 0C14.51 3.81 17 5 19 5a1 1 0 0 1 1 1Z"/><path d="m9 12 2 2 4-4"/></symbol>
+    <symbol id="i-plug" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22v-5M9 8V2M15 8V2M18 8v5a4 4 0 0 1-4 4h-4a4 4 0 0 1-4-4V8Z"/></symbol>
+    <symbol id="i-cloud" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></symbol>
+    <symbol id="i-refresh" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 0 1-15.5 6.2L3 16M3 12a9 9 0 0 1 15.5-6.2L21 8"/><path d="M21 3v5h-5M3 21v-5h5"/></symbol>
+    <symbol id="i-message" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2Z"/></symbol>
+    <symbol id="i-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></symbol>
+    <symbol id="i-arrow-circle" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20Zm.7 5.3 4 4a1 1 0 0 1 0 1.4l-4 4a1 1 0 0 1-1.4-1.4l2.3-2.3H7.5a1 1 0 1 1 0-2h6.1l-2.3-2.3a1 1 0 0 1 1.4-1.4Z"/></symbol>
+    <symbol id="i-chevron-circle" viewBox="0 0 24 24"><circle cx="12" cy="12" r="12" fill="currentColor"/><path d="m7.5 10 4.5 4.5 4.5-4.5" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+    <symbol id="i-mail" viewBox="0 0 24 24" fill="currentColor"><path d="M2 6.5A2.5 2.5 0 0 1 4.5 4h15A2.5 2.5 0 0 1 22 6.5v.4l-10 6.1L2 6.9v-.4Z"/><path d="M2 9.2V17.5A2.5 2.5 0 0 0 4.5 20h15a2.5 2.5 0 0 0 2.5-2.5V9.2l-9.5 5.8a1 1 0 0 1-1 0L2 9.2Z"/></symbol>
+    <symbol id="i-phone" viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1L6.6 10.8Z"/></symbol>
+    <symbol id="i-linkedin" viewBox="0 0 24 24" fill="currentColor"><path d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5ZM3 9.75h4V21H3V9.75Zm6.5 0h3.8v1.55h.06c.53-1 1.83-2.05 3.77-2.05 4.03 0 4.77 2.65 4.77 6.1V21h-4v-4.95c0-1.18-.02-2.7-1.65-2.7-1.65 0-1.9 1.29-1.9 2.62V21h-4V9.75Z"/></symbol>
+    <symbol id="i-facebook" viewBox="0 0 24 24" fill="currentColor"><path d="M13.5 21v-7.5h2.5l.4-3h-2.9V8.6c0-.87.25-1.46 1.5-1.46h1.55V4.47A20.6 20.6 0 0 0 14.3 4.3c-2.25 0-3.8 1.37-3.8 3.9v2.3H8v3h2.5V21h3Z"/></symbol>
+    <symbol id="i-instagram" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></symbol>
+    <symbol id="i-file-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8Z"/><path d="M14 2v6h6M9.5 12.5l5 5M14.5 12.5l-5 5"/></symbol>
+  </defs>
+</svg>
+
+<a class="x-skip" href="#contenido">Ir al contenido</a>
+
+<!-- BLOQUE: header (homologado con el menú de xternall.com) -->
+<header class="x-header" data-header>
+  <div class="x-container x-header__inner">
+    <a class="x-logo x-logo--long" href="#inicio" aria-label="Xternall REPSE y Cumplimiento, inicio">
+      <img src="assets/xternall-logo.svg" alt="Xternall" width="188" height="39">
+      <span class="x-logo__tag x-logo__tag--long">REPSE Y CUMPLIMIENTO</span>
+    </a>
+    <button class="x-menu-btn" type="button" aria-label="Abrir menú" aria-expanded="false" aria-controls="menu-principal" data-menu-toggle>
+      <svg class="x-menu-btn__open" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
+      <svg class="x-menu-btn__close" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M18 6 6 18M6 6l12 12"/></svg>
+    </button>
+    <nav class="x-nav" id="menu-principal" aria-label="Navegación principal" data-open="false">
+      <ul class="x-nav__list">
+        <li><a href="#funcionalidades">Funcionalidades</a></li>
+        <li><a href="#caracteristicas">Características</a></li>
+        <li><a href="#faq">FAQs</a></li>
+        <li class="x-nav__has-sub">
+          <button class="x-nav__sub-toggle" type="button" aria-expanded="false" aria-controls="sub-soluciones">Otras Soluciones<span class="x-nav__chev"><svg><use href="#i-chevron"/></svg></span></button>
+          <ul class="x-nav__sub" id="sub-soluciones">
+            <li><a href="https://xternall.com/portal-de-proveedores/">Portal de Proveedores <svg><use href="#i-arrow-circle"/></svg></a></li>
+            <li><a href="https://xternall.com/contracts/">Contracts <svg><use href="#i-arrow-circle"/></svg></a></li>
+            <li><a href="https://xternall.com/prevencion-de-riesgo-fiscal/">Prevención de Riesgo Fiscal <svg><use href="#i-arrow-circle"/></svg></a></li>
+            <li><a href="https://xternall.com/validacion-fiscal-de-proveedores-de-riesgo/">Validación Fiscal <svg><use href="#i-arrow-circle"/></svg></a></li>
+          </ul>
+        </li>
+        <li class="x-nav__cta"><a class="x-btn x-btn--primary" href="#demo">Agenda una DEMO</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="contenido">
+
+  <!-- BLOQUE: hero-form -->
+  <section class="x-hero x-hero--duotone b-hero b-hero--logos" id="inicio" style="background-image: url('assets/bg-particles.svg'), url('assets/hero-bg.jpg')">
+    <div class="x-container b-hero__grid">
+      <div class="b-hero__copy x-on-dark">
+        <p class="x-eyebrow">Gestión de Proveedores de Servicios Especializados</p>
+        <h1 class="x-display p-hero-title"><span class="p-nowrap">Asegura el Cumplimiento</span><br><strong>de tus Proveedores REPSE</strong></h1>
+        <p class="b-hero__desc">Monitorea y garantiza el cumplimiento de tus prestadores de servicio con el SAT, REPSE, IMSS e INFONAVIT.</p>
+        <ul class="x-checklist">
+          <li>Validación automática de documentos</li>
+          <li>Monitoreo y alertas de riesgos</li>
+          <li>Repositorio histórico de evidencia</li>
+        </ul>
+        <div class="b-hero__cta">
+          <a class="x-btn x-btn--ghost-light" href="#funcionalidades">¿Cómo funciona? <svg><use href="#i-arrow-down"/></svg></a>
+        </div>
+      </div>
+
+      <!-- BLOQUE: logos (dentro del hero: en móvil queda antes del formulario) -->
+      <div class="b-logos">
+        <span>Empresas que confían en nosotros:</span>
+        <div class="b-logos__viewport">
+          <div class="b-logos__track">
+            <ul class="b-logos__list" aria-label="Logos de clientes">
+              <li><img src="assets/logos/michellin.webp" alt="" width="81" height="44"></li>
+              <li><img src="assets/logos/levis.webp" alt="" width="108" height="44"></li>
+              <li><img src="assets/logos/hym.webp" alt="" width="67" height="44"></li>
+              <li><img src="assets/logos/moctezuma.webp" alt="" width="254" height="44"></li>
+              <li><img src="assets/logos/eleven.webp" alt="" width="46" height="44"></li>
+              <li><img src="assets/logos/cinsa.webp" alt="" width="104" height="44"></li>
+              <li><img src="assets/logos/banbajio.webp" alt="" width="206" height="44"></li>
+              <li><img src="assets/logos/bachoco.webp" alt="" width="146" height="44"></li>
+              <li><img src="assets/logos/autozone.webp" alt="" width="176" height="44"></li>
+              <li><img src="assets/logos/arauco.webp" alt="" width="275" height="44"></li>
+              <li><img src="assets/logos/asoforo.webp" alt="" width="206" height="44"></li>
+              <li><img src="assets/logos/astrum.webp" alt="" width="161" height="44"></li>
+              <li><img src="assets/logos/atos.webp" alt="" width="134" height="44"></li>
+              <li><img src="assets/logos/bafar.webp" alt="" width="67" height="44"></li>
+              <li><img src="assets/logos/baramin.webp" alt="" width="113" height="44"></li>
+              <li><img src="assets/logos/calidra.webp" alt="" width="103" height="44"></li>
+              <li><img src="assets/logos/cie.webp" alt="" width="102" height="44"></li>
+              <li><img src="assets/logos/ciee.webp" alt="" width="90" height="44"></li>
+              <li><img src="assets/logos/citrofut.webp" alt="" width="189" height="44"></li>
+              <li><img src="assets/logos/costa.webp" alt="" width="63" height="44"></li>
+              <li><img src="assets/logos/cpa.webp" alt="" width="44" height="44"></li>
+              <li><img src="assets/logos/daltile.webp" alt="" width="36" height="44"></li>
+              <li><img src="assets/logos/davivir.webp" alt="" width="142" height="44"></li>
+              <li><img src="assets/logos/dollar.webp" alt="" width="92" height="44"></li>
+              <li><img src="assets/logos/ellucian.webp" alt="" width="210" height="44"></li>
+              <li><img src="assets/logos/essilor.webp" alt="" width="44" height="44"></li>
+              <li><img src="assets/logos/fibra.webp" alt="" width="97" height="44"></li>
+              <li><img src="assets/logos/firmenich.webp" alt="" width="165" height="44"></li>
+              <li><img src="assets/logos/gaya.webp" alt="" width="153" height="44"></li>
+              <li><img src="assets/logos/gdi.webp" alt="" width="194" height="44"></li>
+              <li><img src="assets/logos/gicsa.webp" alt="" width="60" height="44"></li>
+              <li><img src="assets/logos/grupomex.webp" alt="" width="232" height="44"></li>
+              <li><img src="assets/logos/henco.webp" alt="" width="183" height="44"></li>
+              <li><img src="assets/logos/ilusion.webp" alt="" width="145" height="44"></li>
+              <li><img src="assets/logos/intuitive.webp" alt="" width="111" height="44"></li>
+              <li><img src="assets/logos/kenw.webp" alt="" width="228" height="44"></li>
+              <li><img src="assets/logos/laloma.webp" alt="" width="136" height="44"></li>
+              <li><img src="assets/logos/le.webp" alt="" width="115" height="44"></li>
+              <li><img src="assets/logos/leadec.webp" alt="" width="174" height="44"></li>
+              <li><img src="assets/logos/linde.webp" alt="" width="88" height="44"></li>
+              <li><img src="assets/logos/liomon.webp" alt="" width="99" height="44"></li>
+              <li><img src="assets/logos/metalsa.webp" alt="" width="165" height="44"></li>
+              <li><img src="assets/logos/mina.webp" alt="" width="88" height="44"></li>
+              <li><img src="assets/logos/moth.webp" alt="" width="194" height="44"></li>
+              <li><img src="assets/logos/ocesa.webp" alt="" width="114" height="44"></li>
+              <li><img src="assets/logos/paccar.webp" alt="" width="210" height="44"></li>
+              <li><img src="assets/logos/panamerica.webp" alt="" width="216" height="44"></li>
+              <li><img src="assets/logos/penacolorado.webp" alt="" width="120" height="44"></li>
+              <li><img src="assets/logos/proeza.webp" alt="" width="140" height="44"></li>
+              <li><img src="assets/logos/quifa.webp" alt="" width="133" height="44"></li>
+              <li><img src="assets/logos/rica.webp" alt="" width="138" height="44"></li>
+              <li><img src="assets/logos/sig.webp" alt="" width="68" height="44"></li>
+              <li><img src="assets/logos/solvai.webp" alt="" width="44" height="44"></li>
+              <li><img src="assets/logos/taylor.webp" alt="" width="77" height="44"></li>
+              <li><img src="assets/logos/technimar.webp" alt="" width="426" height="44"></li>
+              <li><img src="assets/logos/theautin.webp" alt="" width="78" height="44"></li>
+              <li><img src="assets/logos/trane.webp" alt="" width="34" height="44"></li>
+              <li><img src="assets/logos/tubacero.webp" alt="" width="52" height="44"></li>
+              <li><img src="assets/logos/twin.webp" alt="" width="84" height="44"></li>
+              <li><img src="assets/logos/tyasa.webp" alt="" width="183" height="44"></li>
+              <li><img src="assets/logos/westrock.webp" alt="" width="203" height="44"></li>
+            </ul>
+            <ul class="b-logos__list" aria-hidden="true">
+              <li><img src="assets/logos/michellin.webp" alt="" width="81" height="44"></li>
+              <li><img src="assets/logos/levis.webp" alt="" width="108" height="44"></li>
+              <li><img src="assets/logos/hym.webp" alt="" width="67" height="44"></li>
+              <li><img src="assets/logos/moctezuma.webp" alt="" width="254" height="44"></li>
+              <li><img src="assets/logos/eleven.webp" alt="" width="46" height="44"></li>
+              <li><img src="assets/logos/cinsa.webp" alt="" width="104" height="44"></li>
+              <li><img src="assets/logos/banbajio.webp" alt="" width="206" height="44"></li>
+              <li><img src="assets/logos/bachoco.webp" alt="" width="146" height="44"></li>
+              <li><img src="assets/logos/autozone.webp" alt="" width="176" height="44"></li>
+              <li><img src="assets/logos/arauco.webp" alt="" width="275" height="44"></li>
+              <li><img src="assets/logos/asoforo.webp" alt="" width="206" height="44"></li>
+              <li><img src="assets/logos/astrum.webp" alt="" width="161" height="44"></li>
+              <li><img src="assets/logos/atos.webp" alt="" width="134" height="44"></li>
+              <li><img src="assets/logos/bafar.webp" alt="" width="67" height="44"></li>
+              <li><img src="assets/logos/baramin.webp" alt="" width="113" height="44"></li>
+              <li><img src="assets/logos/calidra.webp" alt="" width="103" height="44"></li>
+              <li><img src="assets/logos/cie.webp" alt="" width="102" height="44"></li>
+              <li><img src="assets/logos/ciee.webp" alt="" width="90" height="44"></li>
+              <li><img src="assets/logos/citrofut.webp" alt="" width="189" height="44"></li>
+              <li><img src="assets/logos/costa.webp" alt="" width="63" height="44"></li>
+              <li><img src="assets/logos/cpa.webp" alt="" width="44" height="44"></li>
+              <li><img src="assets/logos/daltile.webp" alt="" width="36" height="44"></li>
+              <li><img src="assets/logos/davivir.webp" alt="" width="142" height="44"></li>
+              <li><img src="assets/logos/dollar.webp" alt="" width="92" height="44"></li>
+              <li><img src="assets/logos/ellucian.webp" alt="" width="210" height="44"></li>
+              <li><img src="assets/logos/essilor.webp" alt="" width="44" height="44"></li>
+              <li><img src="assets/logos/fibra.webp" alt="" width="97" height="44"></li>
+              <li><img src="assets/logos/firmenich.webp" alt="" width="165" height="44"></li>
+              <li><img src="assets/logos/gaya.webp" alt="" width="153" height="44"></li>
+              <li><img src="assets/logos/gdi.webp" alt="" width="194" height="44"></li>
+              <li><img src="assets/logos/gicsa.webp" alt="" width="60" height="44"></li>
+              <li><img src="assets/logos/grupomex.webp" alt="" width="232" height="44"></li>
+              <li><img src="assets/logos/henco.webp" alt="" width="183" height="44"></li>
+              <li><img src="assets/logos/ilusion.webp" alt="" width="145" height="44"></li>
+              <li><img src="assets/logos/intuitive.webp" alt="" width="111" height="44"></li>
+              <li><img src="assets/logos/kenw.webp" alt="" width="228" height="44"></li>
+              <li><img src="assets/logos/laloma.webp" alt="" width="136" height="44"></li>
+              <li><img src="assets/logos/le.webp" alt="" width="115" height="44"></li>
+              <li><img src="assets/logos/leadec.webp" alt="" width="174" height="44"></li>
+              <li><img src="assets/logos/linde.webp" alt="" width="88" height="44"></li>
+              <li><img src="assets/logos/liomon.webp" alt="" width="99" height="44"></li>
+              <li><img src="assets/logos/metalsa.webp" alt="" width="165" height="44"></li>
+              <li><img src="assets/logos/mina.webp" alt="" width="88" height="44"></li>
+              <li><img src="assets/logos/moth.webp" alt="" width="194" height="44"></li>
+              <li><img src="assets/logos/ocesa.webp" alt="" width="114" height="44"></li>
+              <li><img src="assets/logos/paccar.webp" alt="" width="210" height="44"></li>
+              <li><img src="assets/logos/panamerica.webp" alt="" width="216" height="44"></li>
+              <li><img src="assets/logos/penacolorado.webp" alt="" width="120" height="44"></li>
+              <li><img src="assets/logos/proeza.webp" alt="" width="140" height="44"></li>
+              <li><img src="assets/logos/quifa.webp" alt="" width="133" height="44"></li>
+              <li><img src="assets/logos/rica.webp" alt="" width="138" height="44"></li>
+              <li><img src="assets/logos/sig.webp" alt="" width="68" height="44"></li>
+              <li><img src="assets/logos/solvai.webp" alt="" width="44" height="44"></li>
+              <li><img src="assets/logos/taylor.webp" alt="" width="77" height="44"></li>
+              <li><img src="assets/logos/technimar.webp" alt="" width="426" height="44"></li>
+              <li><img src="assets/logos/theautin.webp" alt="" width="78" height="44"></li>
+              <li><img src="assets/logos/trane.webp" alt="" width="34" height="44"></li>
+              <li><img src="assets/logos/tubacero.webp" alt="" width="52" height="44"></li>
+              <li><img src="assets/logos/twin.webp" alt="" width="84" height="44"></li>
+              <li><img src="assets/logos/tyasa.webp" alt="" width="183" height="44"></li>
+              <li><img src="assets/logos/westrock.webp" alt="" width="203" height="44"></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <div class="b-demo" id="demo">
+        <p class="x-eyebrow">TU CUMPLIMIENTO REPSE EMPIEZA AQUÍ</p>
+        <h2 class="x-h4">Conoce cómo funciona.</h2>
+        <p class="b-demo__intro">Recorre el expediente de un proveedor y descubre cómo validar su cumplimiento ante el SAT, IMSS, INFONAVIT y REPSE.</p>
+        <!-- Envío al CRM: la configuración (endpoint y api-key) está en js/blocks.js → "CONFIGURACIÓN CRM" -->
+        <form class="b-demo__form" data-demo-form novalidate
+              data-busy="Registrando solicitud…"
+              data-error="No se pudo registrar. Intenta nuevamente."
+              data-error-network="No pudimos conectar. Intenta nuevamente.">
+          <div class="x-field"><label class="x-label" for="demo-name">Nombre</label><input class="x-input" id="demo-name" name="name" placeholder="Tu nombre y apellido" autocomplete="name" minlength="2" maxlength="100" required></div>
+          <div class="x-field"><label class="x-label" for="demo-email">Correo corporativo</label><input class="x-input" id="demo-email" name="email" type="email" placeholder="nombre@empresa.com" autocomplete="email" maxlength="150" required></div>
+          <div class="x-field"><label class="x-label" for="demo-company">Empresa</label><input class="x-input" id="demo-company" name="company" placeholder="Nombre de tu empresa" autocomplete="organization" minlength="2" maxlength="150" required></div>
+          <div class="x-field"><label class="x-label" for="demo-suppliers">¿Cuántos proveedores REPSE administras?</label>
+            <select class="x-select" id="demo-suppliers" name="suppliers" required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option value="1–50">1–50 proveedores</option>
+              <option value="51–200">51–200 proveedores</option>
+              <option value="201–500">201–500 proveedores</option>
+              <option value="501–1,000">501–1,000 proveedores</option>
+              <option value="Más de 1,000">Más de 1,000 proveedores</option>
+            </select>
+          </div>
+          <div class="b-demo__honeypot" aria-hidden="true"><label>Website<input name="website" tabindex="-1" autocomplete="off"></label></div>
+          <label class="x-check"><input type="checkbox" name="consent" id="demo-consent" required> Quiero que Xternall me contacte sobre una demo.</label>
+          <button class="x-btn x-btn--primary x-btn--block" type="submit" data-label="Solicitar una demo">Solicitar una demo</button>
+          <p class="b-demo__error" role="alert" hidden></p>
+          <noscript><p class="b-demo__error">Para solicitar tu demostración, escribe a <a href="mailto:ventas@xternall.com">ventas@xternall.com</a>.</p></noscript>
+          <p class="b-demo__foot"><svg class="x-ico"><use href="#i-message"/></svg><span>Una conversación enfocada en tus proveedores.</span></p>
+        </form>
+        <div class="b-demo__success" role="status" tabindex="-1" hidden>
+          <span class="x-icon"><svg><use href="#i-check-circle"/></svg></span>
+          <strong>Tu solicitud quedó registrada.</strong>
+          <p>Guardamos tus datos y tu interés en una demostración de Xternall REPSE y Cumplimiento.</p>
+          <div class="b-demo__folio" data-folio hidden><small>Tu folio de solicitud</small><b></b><small>Conserva esta referencia para dar seguimiento.</small></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: evidence-split (imagen + texto) -->
+  <section class="x-section" id="solucion">
+    <div class="x-container b-evidence-split">
+      <div class="b-evidence-split__media">
+        <img src="assets/repse-validacion.png" alt="Validación de documentos de proveedores REPSE ante SAT, IMSS e INFONAVIT en Xternall" width="714" height="847" loading="lazy">
+      </div>
+      <div>
+        <h2 class="x-h2">Con Xternall asegura<br><span class="x-h-accent">de manera sencilla y automática</span></h2>
+        <p>que tus proveedores estén al día con sus compromisos fiscales y patronales, conforme a lo dispuesto en la nueva reforma de subcontratación laboral.</p>
+        <a class="x-btn x-btn--outline" href="#funcionalidades">¿Cómo funciona? <svg><use href="#i-arrow-down"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: process--side (funcionalidades) -->
+  <section class="x-section x-section--ice-diag x-section--curved" id="funcionalidades">
+    <div class="x-container">
+      <div class="x-section-head p-center-head">
+        <h2 class="x-h2">Funcionalidades</h2>
+        <p class="x-lead p-subline">Facilita a tus proveedores la carga de sus documentos de cumplimiento.</p>
+      </div>
+      <div class="b-process b-process--side" data-tabs>
+        <div class="b-process__tabs" role="tablist" aria-label="Funcionalidades">
+          <button class="b-process__tab" type="button" role="tab" id="tab-f1" aria-selected="true" aria-controls="f1"><span>01</span> Carga de Documentos</button>
+          <button class="b-process__tab" type="button" role="tab" id="tab-f2" aria-selected="false" tabindex="-1" aria-controls="f2"><span>02</span> Validación Automática</button>
+          <button class="b-process__tab" type="button" role="tab" id="tab-f3" aria-selected="false" tabindex="-1" aria-controls="f3"><span>03</span> Carga de Colaboradores</button>
+          <button class="b-process__tab" type="button" role="tab" id="tab-f4" aria-selected="false" tabindex="-1" aria-controls="f4"><span>04</span> Monitoreo y alertas de riesgos</button>
+          <button class="b-process__tab" type="button" role="tab" id="tab-f5" aria-selected="false" tabindex="-1" aria-controls="f5"><span>05</span> Reportes e indicadores</button>
+          <button class="b-process__tab" type="button" role="tab" id="tab-f6" aria-selected="false" tabindex="-1" aria-controls="f6"><span>06</span> Repositorio histórico</button>
+          <button class="b-process__tab" type="button" role="tab" id="tab-f7" aria-selected="false" tabindex="-1" aria-controls="f7"><span>07</span> Evaluación de proveedores</button>
+        </div>
+
+        <div class="x-card b-process__panel b-process__panel--snap" role="tabpanel" id="f1" aria-labelledby="tab-f1" tabindex="0">
+          <div>
+            <h3>Carga de Documentos</h3>
+            <p>Permite a tus proveedores de manera sencilla la carga de sus documentos de cumplimiento ante el SAT, IMSS, Infonavit, Secretaría del Trabajo (REPSE) y Obligaciones Patronales.</p>
+            <a class="x-link" href="#demo">Agenda una DEMO <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+          <div class="b-snap">
+            <div class="b-snap__head"><span><b>Período:</b> Sep 2026</span><label><b>Proveedor:</b> <select aria-label="Proveedor" data-fill-target="snap-1" data-fill-prefix="s1-"><option value="mila">Mila Distribuidora SA de CV</option><option value="norte">Servicios Integrales del Norte</option></select></label></div>
+            <table class="b-snap__stack" id="snap-1"><thead><tr><th>Objeto Cumplimiento</th><th><span class="b-snap__pill b-snap__pill--gray">Esperados</span></th><th><span class="b-snap__pill">Cargados</span></th><th><span class="b-snap__pill b-snap__pill--pending">Pendientes</span></th></tr></thead><tbody><tr><td>Cumplimiento SAT</td><td class="b-snap__n b-snap__n--gray" data-f="satE"></td><td class="b-snap__n b-snap__n--blue" data-f="satC"></td><td class="b-snap__n b-snap__n--pending" data-f="satP"></td></tr><tr><td>Cumplimiento IMSS</td><td class="b-snap__n b-snap__n--gray" data-f="imssE"></td><td class="b-snap__n b-snap__n--blue" data-f="imssC"></td><td class="b-snap__n b-snap__n--pending" data-f="imssP"></td></tr><tr><td>Cumplimiento Infonavit</td><td class="b-snap__n b-snap__n--gray" data-f="infoE"></td><td class="b-snap__n b-snap__n--blue" data-f="infoC"></td><td class="b-snap__n b-snap__n--pending" data-f="infoP"></td></tr><tr><td>Cumplimiento STPS - REPSE</td><td class="b-snap__n b-snap__n--gray" data-f="repseE"></td><td class="b-snap__n b-snap__n--blue" data-f="repseC"></td><td class="b-snap__n b-snap__n--pending" data-f="repseP"></td></tr><tr><td>Obligaciones Patronales</td><td class="b-snap__n b-snap__n--gray" data-f="patE"></td><td class="b-snap__n b-snap__n--blue" data-f="patC"></td><td class="b-snap__n b-snap__n--pending" data-f="patP"></td></tr></tbody></table>
+          </div>
+        </div>
+
+        <div class="x-card b-process__panel b-process__panel--snap" role="tabpanel" id="f2" aria-labelledby="tab-f2" tabindex="0" hidden>
+          <div>
+            <h3>Validación Automática</h3>
+            <p>Al cargar la información, Xternall revisa automáticamente la autenticidad de los documentos subidos a la plataforma detectando cualquier anomalía, inconsistencia o riesgo determinando el nivel de cumplimiento del proveedor.</p>
+            <a class="x-link" href="#demo">Agenda una DEMO <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+          <div class="b-snap">
+            <div class="b-snap__head"><span><b>Proveedor:</b> Servicios Integrales del Norte</span><span><b>Contrato:</b> SWP-01</span></div>
+            <div class="b-snap__tabs" data-switch role="group" aria-label="Archivo cargado">
+              <button type="button" data-switch-to="v-ok" aria-pressed="true">Resumen liquidación.pdf</button>
+              <button type="button" data-switch-to="v-bad" aria-pressed="false">Acuse-Septiembre-2026.pdf</button>
+            </div>
+            <div class="b-snap__result" id="v-ok"><span class="b-snap__result-icon"><svg><use href="#i-file-check"/></svg></span><strong>Documento Validado</strong><small>Nombre del archivo: <b>Resumen liquidación.pdf</b></small></div>
+            <div class="b-snap__result b-snap__result--bad" id="v-bad" hidden><span class="b-snap__result-icon"><svg><use href="#i-file-x"/></svg></span><strong>Los valores del ejercicio no coinciden</strong><small>Nombre del archivo: <b>Acuse-Septiembre-2026.pdf</b></small></div>
+          </div>
+        </div>
+
+        <div class="x-card b-process__panel b-process__panel--snap" role="tabpanel" id="f3" aria-labelledby="tab-f3" tabindex="0" hidden>
+          <div>
+            <h3>Carga de Colaboradores</h3>
+            <p>Permite al proveedor cargar sus colaboradores a un contrato de servicios especializados así como la evidencia de los servicios y la factura.</p>
+            <a class="x-link" href="#demo">Agenda una DEMO <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+          <div class="b-snap">
+            <div class="b-snap__head"><span><b>Proveedor:</b> Servicios Integrales del Norte</span><span><b>Periodo:</b> Sep 2026</span></div>
+            <div class="b-snap__tabs" data-switch role="group" aria-label="Colaboradores">
+              <button type="button" data-switch-to="c-act" aria-pressed="true">Activos (24)</button>
+              <button type="button" data-switch-to="c-baja" aria-pressed="false">Con Fecha de Baja (2)</button>
+            </div>
+            <table class="b-snap__stack b-snap__stack--2" id="c-act"><thead><tr><th>Nombre Persona</th><th>Contrato</th><th>Archivos</th></tr></thead><tbody><tr><td>ÁLVAREZ RUIZ MARIO ALBERTO</td><td>SWP-01</td><td><span class="x-badge x-badge--success">Aprobados</span></td></tr><tr><td>BENÍTEZ LARA SOFÍA</td><td>SWP-01</td><td><span class="x-badge x-badge--success">Aprobados</span></td></tr><tr><td>CANTÚ GARZA LUIS FERNANDO</td><td>SWP-02</td><td><span class="x-badge x-badge--danger">Rechazados 1</span></td></tr><tr><td>DELGADO TREVIÑO ANA PAOLA</td><td>SWP-02</td><td><span class="x-badge x-badge--success">Aprobados</span></td></tr></tbody></table>
+            <table class="b-snap__stack b-snap__stack--2" id="c-baja" hidden><thead><tr><th>Nombre Persona</th><th>Contrato</th><th>Estatus</th></tr></thead><tbody><tr><td>ESPINOSA MORA RAÚL</td><td>SWP-01</td><td><small>Baja 15/08/2026</small></td></tr><tr><td>FUENTES SALAZAR KARLA</td><td>SWP-02</td><td><small>Baja 31/08/2026</small></td></tr></tbody></table>
+            <p class="b-snap__foot">Evidencia de los servicios y factura del periodo: cargadas</p>
+          </div>
+        </div>
+
+        <div class="x-card b-process__panel b-process__panel--snap" role="tabpanel" id="f4" aria-labelledby="tab-f4" tabindex="0" hidden>
+          <div>
+            <h3>Monitoreo y alertas</h3>
+            <p>Vigila listas negras del SAT y la Unidad de Inteligencia Financiera, así como la vigencia del REPSE, detectando omisiones e inconsistencias. En caso de riesgos, genera alertas con acciones automáticas de atención y resolución.</p>
+            <a class="x-link" href="#demo">Agenda una DEMO <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+          <div class="b-snap" id="snap-4">
+            <div class="b-snap__head"><span><b>Período:</b> Sep 2026</span><label><b>Proveedor:</b> <select aria-label="Proveedor" data-fill-target="snap-4" data-fill-prefix="s4-"><option value="mila">Mila Distribuidora SA de CV</option><option value="norte">Servicios Integrales del Norte</option></select></label></div>
+            <table><thead><tr><th>Revisión</th><th>Resultado</th></tr></thead><tbody><tr><td>Listas negras del SAT</td><td><span data-f-tone="satT" data-f="satS"></span></td></tr><tr><td>Unidad de Inteligencia Financiera</td><td><span data-f-tone="uifT" data-f="uifS"></span></td></tr><tr><td>Vigencia del REPSE</td><td><span data-f-tone="repseT" data-f="repseS"></span></td></tr></tbody></table>
+            <p class="b-snap__foot" data-f="foot"></p>
+          </div>
+        </div>
+
+        <div class="x-card b-process__panel b-process__panel--snap" role="tabpanel" id="f5" aria-labelledby="tab-f5" tabindex="0" hidden>
+          <div>
+            <h3>Reportes e indicadores</h3>
+            <p>Indicadores detallados sobre tus proveedores. A través del visualizador de Xternall, obtén rápidamente una visión general del cumplimiento de tus proveedores y explora el detalle necesario para decisiones informadas.</p>
+            <a class="x-link" href="#demo">Agenda una DEMO <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+          <div class="b-snap">
+            <div class="b-snap__head"><span><b>Período:</b> Sep 2026</span><label><b>Proveedor:</b> <select aria-label="Proveedor" data-fill-target="snap-5" data-fill-prefix="s5-"><option value="mila">Mila Distribuidora SA de CV</option><option value="norte">Servicios Integrales del Norte</option></select></label></div>
+            <table class="b-snap__stack" id="snap-5"><thead><tr><th>Objeto Cumplimiento</th><th><span class="b-snap__pill b-snap__pill--ok">Cumplimiento</span></th><th><span class="b-snap__pill b-snap__pill--bad">Incumplimiento</span></th><th><span class="b-snap__pill b-snap__pill--pending">Pendientes</span></th></tr></thead><tbody><tr><td>Cumplimiento IMSS</td><td class="b-snap__n b-snap__n--ok" data-f="imssOk"></td><td class="b-snap__n b-snap__n--bad" data-f="imssBad"></td><td class="b-snap__n b-snap__n--pending" data-f="imssPen"></td></tr><tr><td>Cumplimiento SAT</td><td class="b-snap__n b-snap__n--ok" data-f="satOk"></td><td class="b-snap__n b-snap__n--bad" data-f="satBad"></td><td class="b-snap__n b-snap__n--pending" data-f="satPen"></td></tr><tr><td>Cumplimiento STPS - REPSE</td><td class="b-snap__n b-snap__n--ok" data-f="repseOk"></td><td class="b-snap__n b-snap__n--bad" data-f="repseBad"></td><td class="b-snap__n b-snap__n--pending" data-f="repsePen"></td></tr><tr><td>Cumplimiento INFONAVIT</td><td class="b-snap__n b-snap__n--ok" data-f="infoOk"></td><td class="b-snap__n b-snap__n--bad" data-f="infoBad"></td><td class="b-snap__n b-snap__n--pending" data-f="infoPen"></td></tr></tbody></table>
+          </div>
+        </div>
+
+        <div class="x-card b-process__panel b-process__panel--snap" role="tabpanel" id="f6" aria-labelledby="tab-f6" tabindex="0" hidden>
+          <div>
+            <h3>Repositorio histórico</h3>
+            <p>Permite una recepción ordenada y bien documentada con toda la evidencia de los proyectos y servicios que has contratado, dejando todo muy bien sustentado con un repositorio histórico de fácil acceso.</p>
+            <a class="x-link" href="#demo">Agenda una DEMO <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+          <div class="b-snap" id="snap-6">
+            <div class="b-snap__head"><span><b>Proveedor:</b> Mila Distribuidora SA de CV</span><span><b>Año:</b> 2026</span><label><b>Mes:</b> <select aria-label="Mes" data-fill-target="snap-6" data-fill-prefix="s6-"><option value="sep">Sep</option><option value="ago">Ago</option><option value="jul">Jul</option></select></label><span><b>Contrato:</b> 1787</span></div>
+            <table class="b-snap__stack b-snap__stack--2"><thead><tr><th>Opinión de Cumplimiento</th><th>Documento</th><th data-f="mes"></th></tr></thead><tbody><tr><td>Cumplimiento SAT</td><td>Declaración Provisional de IVA e ISR</td><td><span data-f-tone="d1T" data-f="d1S"></span></td></tr><tr><td>Cumplimiento SAT</td><td>Constancia de Situación Fiscal</td><td><span data-f-tone="d2T" data-f="d2S"></span></td></tr><tr><td>Cumplimiento IMSS</td><td>Cedula de Cuotas Obrero Patronales</td><td><span data-f-tone="d3T" data-f="d3S"></span></td></tr><tr><td>Cumplimiento STPS - REPSE</td><td>ICOSE</td><td><span data-f-tone="d4T" data-f="d4S"></span></td></tr></tbody></table>
+          </div>
+        </div>
+
+        <div class="x-card b-process__panel b-process__panel--snap" role="tabpanel" id="f7" aria-labelledby="tab-f7" tabindex="0" hidden>
+          <div>
+            <h3>Evaluación de proveedores</h3>
+            <p>Con Xternall puedes evaluar los servicios de tus proveedores y su personal, brindándoles feedback. En caso de incumplimiento de políticas o normas internas, se aplican acciones adecuadas.</p>
+            <a class="x-link" href="#demo">Agenda una DEMO <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a>
+          </div>
+          <div class="b-snap" id="snap-7">
+            <div class="b-snap__head"><span><b>Período:</b> Sep 2026</span><label><b>Proveedor:</b> <select aria-label="Proveedor" data-fill-target="snap-7" data-fill-prefix="s7-"><option value="mila">Mila Distribuidora SA de CV</option><option value="norte">Servicios Integrales del Norte</option></select></label></div>
+            <table><thead><tr><th>Evaluación</th><th>Resultado</th></tr></thead><tbody>
+              <tr><td>Calidad del servicio</td><td class="b-snap__n b-snap__n--blue" data-f="cal"></td></tr>
+              <tr><td>Personal del proveedor</td><td class="b-snap__n b-snap__n--blue" data-f="per"></td></tr>
+              <tr><td>Políticas y normas internas</td><td><span data-f-tone="polT" data-f="polS"></span></td></tr>
+            </tbody></table>
+            <p class="b-snap__foot" data-f="foot"></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: folder + actions-dark (expediente del proveedor) -->
+  <section class="x-section x-section--dark x-section--curved" id="documentos">
+    <div class="x-container b-evidence-split x-on-dark">
+      <div class="b-folder">
+        <span class="b-folder__tab">EXPEDIENTE DEL PROVEEDOR</span>
+        <div class="b-folder__card">
+          <div class="b-folder__head">
+            <span class="x-icon"><svg><use href="#i-folder"/></svg></span>
+            <div><small>PROVEEDOR REPSE · EJEMPLO</small><h3>Servicios Integrales del Norte</h3><p><svg class="x-ico"><use href="#i-calendar"/></svg>Periodo: Sep 2026</p></div>
+          </div>
+          <div class="x-tabs" data-switch role="group" aria-label="Documentos por autoridad">
+            <button class="x-tab" type="button" data-switch-to="doc-sat" aria-pressed="true">SAT</button>
+            <button class="x-tab" type="button" data-switch-to="doc-imss" aria-pressed="false">IMSS · INFONAVIT</button>
+            <button class="x-tab" type="button" data-switch-to="doc-repse" aria-pressed="false">REPSE</button>
+          </div>
+          <div id="doc-sat">
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Constancia de Situación Fiscal</strong><small>Vigente</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Declaración Provisional de IVA e ISR</strong><small>Sep 2026</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Acuse de Declaración Provisional de IVA e ISR</strong><small>Los valores del ejercicio no coinciden</small></div><span class="x-badge x-badge--danger">Revisar</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Información Registrada de Pagos de Contribuciones Federales de IVA e ISR</strong><small>Sep 2026</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Opinión de Cumplimiento de SAT, IMSS e INFONAVIT</strong><small>Positiva</small></div><span class="x-badge x-badge--success">Validado</span></div>
+          </div>
+          <div id="doc-imss" hidden>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>SUA</small></span><div><strong>SUA</strong><small>Sep 2026</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Cedula de Cuotas Obrero Patronales</strong><small>Sep 2026</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>SIPARE</strong><small>Comprobante de pago</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>XML</small></span><div><strong>Recibos de Nómina</strong><small>24 colaboradores</small></div><span class="x-badge x-badge--warning">Pendiente</span></div>
+          </div>
+          <div id="doc-repse" hidden>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>REPSE</strong><small>Aviso de registro vigente</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>ICOSE</strong><small>Cuatrimestral</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>SISUB</strong><small>Cuatrimestral</small></div><span class="x-badge x-badge--success">Validado</span></div>
+            <div class="b-file"><span class="b-file__type"><svg class="x-ico"><use href="#i-file"/></svg><small>PDF</small></span><div><strong>Acta Constitutiva</strong><small>Documento corporativo</small></div><span class="x-badge x-badge--success">Validado</span></div>
+          </div>
+          <p class="b-folder__foot"><svg class="x-ico"><use href="#i-check-circle"/></svg>Vista ilustrativa · Datos de ejemplo</p>
+        </div>
+      </div>
+      <div>
+        <h2 class="x-h2">¿Qué documentos<br><span class="x-h-accent">se validan en Xternall?</span></h2>
+        <p>Estos son los principales documentos que se validan en Xternall, si es necesario se pueden configurar documentos adicionales para ser requeridos a los proveedores.</p>
+        <div class="b-actions">
+          <div class="b-action"><span class="x-icon"><svg><use href="#i-search"/></svg></span><div><h3>¿Cómo se realizan las validaciones de los documentos?</h3><p>La plataforma identifica los documentos y valida el contenido de los mismos contra los portales del SAT, IMSS e INFONAVIT.</p></div><svg class="x-ico"><use href="#i-check"/></svg></div>
+          <div class="b-action"><span class="x-icon"><svg><use href="#i-file-check"/></svg></span><div><h3>¿Es posible agregar otro documento adicional para su validación?</h3><p>Si, la plataforma permite configurar tipos de archivos adicionales para su identificación y validación.</p></div><svg class="x-ico"><use href="#i-check"/></svg></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: evidence-split (Xternall Access QR) -->
+  <section class="x-section" id="access-qr">
+    <div class="x-container b-evidence-split">
+      <div>
+        <p class="x-eyebrow">Xternall Access QR</p>
+        <h2 class="x-h2">Controla el acceso a personal de proveedores de riesgo<br><span class="x-h-accent">a tus instalaciones.</span></h2>
+        <a class="x-btn x-btn--primary" href="#demo">Agenda una DEMO</a>
+      </div>
+      <div class="b-evidence-split__media">
+        <img src="assets/access-qr.png" alt="Xternall Access QR: acceso aprobado desde el celular" width="600" height="727" loading="lazy">
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: steps (características clave) -->
+  <section class="x-section x-section--grid" id="caracteristicas">
+    <div class="x-container">
+      <div class="x-section-head p-center-head">
+        <h2 class="x-h2">Características Clave</h2>
+      </div>
+      <div class="b-steps b-steps--4">
+        <article class="x-card x-card--hover b-step"><div class="b-step__top"><span class="x-icon"><svg><use href="#i-plug"/></svg></span></div><h3 class="x-title-card">Fácil Integración</h3><p>Conecta con facilidad Xternall a tu ERP u otros sistemas internos, mediante nuestras api’s, webservices o carga de archivo.</p></article>
+        <article class="x-card x-card--hover b-step"><div class="b-step__top"><span class="x-icon"><svg><use href="#i-shield"/></svg></span></div><h3 class="x-title-card">Altos Niveles de Seguridad</h3><p>Cumplimos con los controles establecidos por la norma ISO-27001.</p></article>
+        <article class="x-card x-card--hover b-step"><div class="b-step__top"><span class="x-icon"><svg><use href="#i-cloud"/></svg></span></div><h3 class="x-title-card">Plataforma Cloud</h3><p>Xternall cuenta con una plataforma cloud que brinda un fácil acceso para tus proveedores y tus usuarios internos.</p></article>
+        <article class="x-card x-card--hover b-step"><div class="b-step__top"><span class="x-icon"><svg><use href="#i-refresh"/></svg></span></div><h3 class="x-title-card">Actualización</h3><p>Actualización permanente de la plataforma para actualizar cambios legislativos, tecnológicos y de seguridad.</p></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: press (medios) -->
+  <section class="x-section x-section--soft x-section--curved" id="medios">
+    <div class="x-container">
+      <div class="x-split-head">
+        <h2 class="x-h2">Xternall<br><span class="x-h-accent">en los medios</span></h2>
+        <p>Consulta lo que opinan los expertos sobre nosotros.</p>
+      </div>
+      <div class="b-press">
+        <article class="x-card b-press__card"><div class="b-press__src"><img src="assets/medios/idc-online.png" alt="" width="56" height="56" loading="lazy"><div><strong>idc Online</strong><small>Portal online de IDC Asesor Fiscal, Jurídico y Laboral</small></div></div><blockquote>Gracias a su sistema de monitoreo constante y validación automática de la documentación, Xternall.com asegura que cada proveedor cumpla con las normativas vigentes…</blockquote><a class="x-link" href="https://idconline.mx/laboral/2024/10/29/conoce-la-importancia-de-revisar-a-tus-proveedores-ante-el-el-repse" target="_blank" rel="noopener">Leer nota <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></article>
+        <article class="x-card b-press__card"><div class="b-press__src"><img src="assets/medios/forbes.jpg" alt="" width="56" height="56" loading="lazy"><div><strong>Forbes México</strong><small>Revista especializada en negocios y finanzas</small></div></div><blockquote>Con la nueva Reforma de Subcontratación Laboral, las empresas se convierten en responsables solidarios de sus proveedores; Xternall es la plataforma que ofrece facilitar y asegurar estas relaciones…</blockquote><a class="x-link" href="https://www.forbes.com.mx/ad-xternall-la-plataforma-de-gestion-de-servicios-especializados/" target="_blank" rel="noopener">Leer nota <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></article>
+        <article class="x-card b-press__card"><div class="b-press__src"><img src="assets/medios/carlos-mota.jpg" alt="" width="56" height="56" loading="lazy"><div><strong>Carlos Mota</strong><small>Periodista de negocios, economía y finanzas.</small></div></div><blockquote>Xternall es la solución al víacrucis de estar verificando a los proveedores…</blockquote><a class="x-link" href="https://www.tiktok.com/@soycarlosmota/video/7155556098949303557?_r=1&amp;_t=8WaZ4oIwHPZ" target="_blank" rel="noopener">Leer nota <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></article>
+        <article class="x-card b-press__card"><div class="b-press__src"><img src="assets/medios/elcontribuyente.jpg" alt="" width="56" height="56" loading="lazy"><div><strong>elContribuyente</strong><small>Revista y sitio web de expertos en temas fiscales, laborales y empresariales.</small></div></div><blockquote>Evita multas por incumplimiento de proveedores REPSE con Xternall y automatiza su revisión…</blockquote><a class="x-link" href="https://www.elcontribuyente.mx/2026/03/evita-multas-por-incumplimiento-de-proveedores-repse-con-xternall-y-automatiza-su-revision/" target="_blank" rel="noopener">Leer nota <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></article>
+        <article class="x-card b-press__card"><div class="b-press__src"><img src="assets/medios/mundo-ejecutivo.png" alt="" width="56" height="56" loading="lazy"><div><strong>Mundo Ejecutivo</strong><small>Revista especializada en negocios y finanzas</small></div></div><blockquote>Con la reforma de Subcontratación en materia laboral que se aprobó en el Senado en abril del año 2021 y que entró en vigor en 2023, es muy importante que las empresas que subcontratan …</blockquote><a class="x-link" href="https://mundoejecutivo.com.mx/actualidad/xternall-sera-tu-aliado-para-cumplir-con-las-obligaciones-fiscales/" target="_blank" rel="noopener">Leer nota <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></article>
+        <article class="x-card b-press__card"><div class="b-press__src"><img src="assets/medios/el-ceo.jpg" alt="" width="56" height="56" loading="lazy"><div><strong>El CEO</strong><small>Periodismo digital de negocios</small></div></div><blockquote>Esta innovadora solución automatizada permite a las empresas supervisar de manera eficiente a sus proveedores REPSE, asegurando que cumplan con las disposiciones legales…</blockquote><a class="x-link" href="https://elceo.com/negocios/xternall-la-plataforma-que-ayuda-a-las-empresas-a-supervisar-a-sus-proveedores-repse/" target="_blank" rel="noopener">Leer nota <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: press--2 (comunicados) -->
+  <section class="x-section" id="comunicados">
+    <div class="x-container">
+      <div class="x-split-head">
+        <h2 class="x-h2">Comunicados<br><span class="x-h-accent">y Noticias</span></h2>
+        <p>Mantente al tanto de las publicaciones más recientes del Servicio de Administración Tributaria</p>
+      </div>
+      <div class="b-press b-press--2">
+        <article class="x-card b-press__card"><p class="b-press__date">14 de agosto de 2023</p><div class="b-press__src"><img src="assets/logo-sat.png" alt="" width="56" height="56" loading="lazy"><div><strong>Gobierno de México</strong></div></div><blockquote>STPS, en coordinación con SAT, IMSS e Infonavit, realizaron 3 mil inspecciones en materia de subcontratación laboral…</blockquote><a class="x-link" href="https://www.gob.mx/sat/prensa/stps-en-coordinacion-con-sat-imss-e-infonavit-realizaron-3-mil-inspecciones-en-materia-de-subcontratacion-laboral-039-2023?idiom=es" target="_blank" rel="noopener">Leer comunicado <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></article>
+        <article class="x-card b-press__card"><p class="b-press__date">17 de Mayo de 2023</p><div class="b-press__src"><img src="assets/logo-sat.png" alt="" width="56" height="56" loading="lazy"><div><strong>Gobierno de México</strong></div></div><blockquote>La subcontratación de personal está prohibida. STPS y SAT exhortan a prestadores de servicios a evitar incurrir en defraudación fiscal…</blockquote><a class="x-link" href="https://www.gob.mx/sat/prensa/la-subcontratacion-de-personal-esta-prohibida-stps-y-sat-exhortan-a-prestadores-de-servicios-a-evitar-incurrir-en-defraudacion-fiscal-019-2023?idiom=es" target="_blank" rel="noopener">Leer comunicado <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></article>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: faq -->
+  <section class="x-section x-section--soft x-section--curved" id="faq">
+    <div class="x-container b-faq">
+      <div class="b-faq__intro">
+        <h2 class="x-h2">Preguntas<br><span class="x-h-accent">Frecuentes</span></h2>
+        <p>En la siguiente lista de preguntas hemos dado respuesta a las dudas más frecuentes, cuenta con ellas como una referencia más rápida y fácil para ti.</p>
+        <a class="x-btn x-btn--outline" href="#demo">Agenda una DEMO <svg><use href="#i-arrow-up-right"/></svg></a>
+      </div>
+      <div class="x-faq">
+        <details><summary>¿Qué es Xternall?</summary><div class="x-faq__body">Es una plataforma que permite validar el cumplimiento FISCAL y LABORAL los proveedores REPSE de una organización.</div></details>
+        <details><summary>¿Cómo funciona la plataforma?</summary><div class="x-faq__body">Por medio de una portal al que los proveedores acceden y cargan su documentación de cumplimiento.</div></details>
+        <details><summary>¿Qué documentos se validan en Xternall?</summary><div class="x-faq__body">Estos son los principales documentos que se validan en Xternall, si es necesario se pueden configurar documentos adicionales para ser requeridos a los proveedores. Documentos:
+          <ul class="x-checklist x-checklist--light p-doc-list">
+            <li>REPSE</li>
+            <li>SUA</li>
+            <li>Acta Constitutiva</li>
+            <li>Acuse de Declaración Provisional de IVA e ISR</li>
+            <li>Declaración Provisional de IVA e ISR</li>
+            <li>Constancia de Situación Fiscal</li>
+            <li>Información Registrada de Pagos de Contribuciones Federales de IVA e ISR</li>
+            <li>Opinión de Cumplimiento de SAT, IMSS e INFONAVIT</li>
+            <li>Cedula de Cuotas Obrero Patronales</li>
+            <li>SIPARE</li>
+            <li>Recibos de Nómina</li>
+            <li>ICOSE</li>
+            <li>SISUB</li>
+          </ul></div></details>
+        <details><summary>¿Es posible agregar otro documento adicional para su validación?</summary><div class="x-faq__body">Si, la plataforma permite configurar tipos de archivos adicionales para su identificación y validación.</div></details>
+        <details><summary>¿Cómo se realizan las validaciones de los documentos?</summary><div class="x-faq__body">La plataforma identifica los documentos y valida el contenido de los mismos contra los portales del SAT, IMSS e INFONAVIT.</div></details>
+        <details><summary>¿Xternall es seguro para almacenar información?</summary><div class="x-faq__body">Estamos ceritificados con ISO 270001 y contamos con controles de desarrollo seguro, pruebas SAST y DAST.</div></details>
+        <details><summary>¿Se pueden almacenar información de otro tipo de archivos?</summary><div class="x-faq__body">Es correcto, cuenta con un módulo llamado materialidad donde se puede cargar cualqueir tipo de archivo</div></details>
+        <details><summary>¿Tienen asistencia para la configuración de Xternall?</summary><div class="x-faq__body">Si, nuestro equipo de implementación esta disponible para apoyarte una vez que hayas contratado el servicio.</div></details>
+        <details><summary>¿Cuánto dura la implementación?</summary><div class="x-faq__body">Aproximadamente 3 semanas.</div></details>
+        <details><summary>¿Tiene costo la implementación?</summary><div class="x-faq__body">No hay costo extra por implementación.</div></details>
+        <details><summary>¿Es posible integrarlo a mi ERP?</summary><div class="x-faq__body">Xternall cuenta con APIs que le permiten integrarse con cualquier ERP del mercado.</div></details>
+        <details><summary>¿Cuentan con Soporte para los Proveedores?</summary><div class="x-faq__body">Si, contamos con una mesa de ayuda lista para atender cualquier duda de los proveedores para la carga de sus archivos de cumplimiento, lo anterior sin costo adicional.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- BLOQUE: closing -->
+  <section class="x-section--blue x-section--curved b-closing">
+    <div class="x-container x-on-dark">
+      <span class="x-icon"><svg><use href="#i-calendar"/></svg></span>
+      <h2 class="x-h2">Solicita una demostración personalizada.</h2>
+      <p class="x-lead">Conoce cómo optimizar tu Gestión de Cumplimiento de Proveedores Especializados.</p>
+      <a class="x-btn x-btn--white" href="#demo">Agenda una DEMO <svg><use href="#i-arrow-up-right"/></svg></a>
+    </div>
+  </section>
+
+</main>
+
+<!-- BLOQUE: footer (homologado con xternall.com, versión sencilla) -->
+<footer class="b-footer">
+  <div class="b-footer__top">
+    <div class="x-container b-footer__top-inner">
+      <a class="b-footer__logo x-logo x-logo--long" href="#inicio" aria-label="Xternall REPSE y Cumplimiento, inicio"><img src="assets/xternall-logo.svg" alt="Xternall" width="188" height="39"><span class="x-logo__tag x-logo__tag--long">REPSE Y CUMPLIMIENTO</span></a>
+      <span class="b-footer__product">Proveedores al día. Cumplimiento con respaldo.<br><a class="x-link" href="mailto:ventas@xternall.com">ventas@xternall.com <svg class="x-ico"><use href="#i-arrow-up-right"/></svg></a></span>
+      <ul class="b-footer__social">
+        <li><a href="https://www.linkedin.com/company/xternall/" target="_blank" rel="noopener" title="Seguir en LinkedIn" aria-label="Seguir en LinkedIn"><svg><use href="#i-linkedin"/></svg></a></li>
+        <li><a href="https://www.facebook.com/xternallmx" target="_blank" rel="noopener" title="Seguir en Facebook" aria-label="Seguir en Facebook"><svg><use href="#i-facebook"/></svg></a></li>
+        <li><a href="https://www.instagram.com/xternall_mx/?hl=es" target="_blank" rel="noopener" title="Seguir en Instagram" aria-label="Seguir en Instagram"><svg><use href="#i-instagram"/></svg></a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="b-footer__main">
+    <div class="x-container">
+      <div class="b-footer__bottom">
+        <div class="b-footer__legal">
+          <a href="https://xternall.com/aviso-de-privacidad/" target="_blank" rel="noopener">AVISO DE PRIVACIDAD</a>
+        </div>
+        <span>© 2026 Xternall.</span>
+        <a class="b-footer__tagline" href="https://xternall.com/" target="_blank" rel="noopener">Conoce Xternall ↗</a>
+      </div>
+
+      <!-- Versión móvil (≤767px): contacto + colapsables, como en xternall.com -->
+      <div class="b-footer__mobile">
+        <div class="b-footer__mcontact">
+          <h2 class="b-footer__title">Contacto</h2>
+          <a href="mailto:ventas@xternall.com"><svg><use href="#i-mail"/></svg>ventas@xternall.com</a>
+          <a href="tel:8185263220"><svg><use href="#i-phone"/></svg>81 8526 3220</a>
+        </div>
+        <details class="b-fold" data-slide="700">
+          <summary>Legales<svg class="b-fold__icon"><use href="#i-chevron-circle"/></svg></summary>
+          <div class="b-fold__body">
+            <a href="https://xternall.com/aviso-de-privacidad/" target="_blank" rel="noopener">AVISO DE PRIVACIDAD</a>
+            <p class="b-gti"><span>Grupo</span> <span class="b-gti__ti">TI</span> <span>México</span></p>
+          </div>
+        </details>
+      </div>
+    </div>
+  </div>
+  <div class="b-footer__copybar"><span>© 2026 Xternall.</span><span><a href="https://xternall.com/" target="_blank" rel="noopener">Conoce Xternall ↗</a></span></div>
+</footer>
+
+<!-- Datos de ejemplo de las tarjetas de Funcionalidades (se leen con data-fill-target) -->
+<template id="s1-mila" data-sat-e="18" data-sat-c="16" data-sat-p="2" data-imss-e="14" data-imss-c="14" data-imss-p="0" data-info-e="4" data-info-c="4" data-info-p="0" data-repse-e="2" data-repse-c="2" data-repse-p="0" data-pat-e="2" data-pat-c="1" data-pat-p="1"></template>
+<template id="s1-norte" data-sat-e="18" data-sat-c="10" data-sat-p="8" data-imss-e="14" data-imss-c="12" data-imss-p="2" data-info-e="4" data-info-c="3" data-info-p="1" data-repse-e="2" data-repse-c="1" data-repse-p="1" data-pat-e="2" data-pat-c="2" data-pat-p="0"></template>
+<template id="s4-mila" data-sat-t="success" data-sat-s="Sin coincidencias" data-uif-t="success" data-uif-s="Sin coincidencias" data-repse-t="success" data-repse-s="Vigente" data-foot="Sin alertas activas"></template>
+<template id="s4-norte" data-sat-t="success" data-sat-s="Sin coincidencias" data-uif-t="success" data-uif-s="Sin coincidencias" data-repse-t="warning" data-repse-s="Vence en 25 días" data-foot="Alerta enviada al proveedor para su atención"></template>
+<template id="s5-mila" data-imss-ok="14" data-imss-bad="0" data-imss-pen="2" data-sat-ok="8" data-sat-bad="0" data-sat-pen="10" data-repse-ok="2" data-repse-bad="0" data-repse-pen="0" data-info-ok="6" data-info-bad="0" data-info-pen="1"></template>
+<template id="s5-norte" data-imss-ok="12" data-imss-bad="1" data-imss-pen="1" data-sat-ok="15" data-sat-bad="0" data-sat-pen="3" data-repse-ok="1" data-repse-bad="0" data-repse-pen="1" data-info-ok="7" data-info-bad="0" data-info-pen="0"></template>
+<template id="s6-jul" data-mes="Jul" data-d1-t="info" data-d1-s="Cargado" data-d2-t="info" data-d2-s="Cargado" data-d3-t="info" data-d3-s="Cargado" data-d4-t="info" data-d4-s="Cargado"></template>
+<template id="s6-ago" data-mes="Ago" data-d1-t="info" data-d1-s="Cargado" data-d2-t="info" data-d2-s="Cargado" data-d3-t="info" data-d3-s="Cargado" data-d4-t="info" data-d4-s="Cargado"></template>
+<template id="s6-sep" data-mes="Sep" data-d1-t="info" data-d1-s="Cargado" data-d2-t="info" data-d2-s="Cargado" data-d3-t="info" data-d3-s="Cargado" data-d4-t="warning" data-d4-s="Pendiente"></template>
+<template id="s7-mila" data-cal="4.6 / 5" data-per="4.8 / 5" data-pol-t="success" data-pol-s="Sin incidencias" data-foot="Feedback enviado al proveedor"></template>
+<template id="s7-norte" data-cal="3.9 / 5" data-per="4.2 / 5" data-pol-t="danger" data-pol-s="1 incumplimiento" data-foot="Acción aplicada: plan de mejora con el proveedor"></template>
+
+<script src="js/blocks.js" defer></script>
+</body>
+</html>

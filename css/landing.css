@@ -1,0 +1,37 @@
+/* ==========================================================================
+   Estilos solo de esta landing (REPSE y Cumplimiento).
+   Usan únicamente tokens del UI Kit; no forman parte del kit.
+   ========================================================================== */
+
+/* Encabezado centrado de sección */
+.p-center-head { margin-bottom: 40px; text-align: center; }
+
+/* Lista de documentos dentro de la FAQ */
+.p-doc-list { margin-top: 14px; gap: 8px; }
+
+/* Título del hero: en móvil la primera frase va en una sola línea */
+@media (max-width: 767px) {
+  .p-nowrap { white-space: nowrap; }
+  .p-hero-title { font-size: clamp(24px, 7.6vw, 38px); }
+}
+
+/* Subtítulo bajo el título de sección */
+.p-subline { max-width: 640px; margin-inline: auto; }
+
+/* Hero: ritmo vertical más holgado entre etiqueta, título, descripción, lista y botón */
+.b-hero__copy .x-eyebrow { margin-bottom: 16px; }
+.b-hero__copy .x-display { margin-bottom: 24px; }
+.b-hero__copy .b-hero__desc { margin-bottom: 28px; }
+.b-hero__copy .x-checklist { gap: 12px; margin-bottom: 36px; }
+
+/* Tablet: título en dos líneas y los cuadros decorativos del fondo detrás del formulario */
+@media (min-width: 768px) and (max-width: 1180px) {
+  .p-hero-title { font-size: clamp(34px, 3.9vw, 47.72px); }
+  .b-hero.x-hero--duotone { background-position: right -320px top 40px, center; }
+}
+@media (max-width: 767px) {
+  .b-hero__copy .x-eyebrow { margin-bottom: 14px; }
+  .b-hero__copy .x-display { margin-bottom: 18px; }
+  .b-hero__copy .b-hero__desc { margin-bottom: 24px; }
+  .b-hero__copy .x-checklist { margin-bottom: 32px; }
+}
