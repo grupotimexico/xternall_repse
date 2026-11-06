@@ -274,10 +274,9 @@
   // LandingLeads:Sites:xternall_repse (docs/LANDING-LEADS.md de portal-ia-backend-service).
   // En local se simula (se muestra en consola) salvo que haya endpointLocal.
   const SOFIA = {
-    // ⚠ PRUEBAS: apunta a QA. Al pasar a producción cambiar a
-    //   'https://sofia-service.gtim.mx/api/public/landing-leads/xternall_repse'
-    endpoint: 'https://sofia-qa-service.gtim.mx/api/public/landing-leads/xternall_repse',
-    endpointLocal: ''                             // p. ej. 'http://localhost:5000/api/public/landing-leads/xternall_repse'
+    // Producción. Para probar contra QA: 'https://sofia-qa-service.gtim.mx/api/public/landing-leads/xternall_repse'
+    endpoint: 'https://sofia-service.gtim.mx/api/public/landing-leads/xternall_repse',
+    endpointLocal: ''                             // p. ej. la URL de QA de arriba, para probar desde local
   };
   // ===========================================================================
 
